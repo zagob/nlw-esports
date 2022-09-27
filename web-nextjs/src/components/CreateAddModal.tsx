@@ -14,10 +14,6 @@ interface GameProps {
   title: string;
 }
 
-// interface GameForm {
-//   game: string;
-// }
-
 export function CreateAddModal() {
   const [games, setGames] = useState<GameProps[]>([]);
   // const { register, handleSubmit, watch, control } = useForm<GameForm>();
@@ -115,7 +111,6 @@ export function CreateAddModal() {
               <option disabled selected value="">
                 Selecione o game que deseja jogar
               </option>
-
               {games.map((game) => (
                 <option key={game.id} value={game.id}>
                   {game.title}
