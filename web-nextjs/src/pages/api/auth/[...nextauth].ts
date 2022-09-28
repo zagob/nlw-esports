@@ -1,13 +1,11 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 
-interface SessionCallbackProps {}
-
 export const authOptions = {
   providers: [
     DiscordProvider({
-      clientId: process.env.PUBLIC_NEXT_CLIENT_ID,
-      clientSecret: process.env.PUBLIC_NEXT_CLIENT_SECRET,
+      clientId: process.env.PUBLIC_NEXT_CLIENT_ID!,
+      clientSecret: process.env.PUBLIC_NEXT_CLIENT_SECRET!,
       authorization: { params: { scope: "identify" } },
     }),
   ],

@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routes = void 0;
+const express_1 = require("express");
+const addAdsToGameIDController_1 = require("./controllers/addAdsToGameIDController");
+const addGameController_1 = require("./controllers/addGameController");
+const getAdsIdController_1 = require("./controllers/getAdsIdController");
+const getGameController_1 = require("./controllers/getGameController");
+const getGameIdAdsController_1 = require("./controllers/getGameIdAdsController");
+exports.routes = (0, express_1.Router)();
+exports.routes.get("/games", getGameController_1.getGameController);
+exports.routes.get("/games/:id/ads", getGameIdAdsController_1.getGameIdAdsController);
+exports.routes.get("/ads/:id/discord", getAdsIdController_1.getAdsIdController);
+exports.routes.post("/games/:gameId/ads", addAdsToGameIDController_1.addAdsToGameIDController);
+exports.routes.post("/games", addGameController_1.addGameController);
